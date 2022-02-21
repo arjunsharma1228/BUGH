@@ -12,437 +12,616 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: "Poppins", sans-serif
-  }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Poppins", sans-serif
+    }
 
-  body {
-    font-size: 16px;
-  }
+    body {
+        font-size: 16px;
+        top: 400px;
+    }
 
-  .w3-half img {
-    margin-bottom: -6px;
-    margin-top: 16px;
-    opacity: 0.8;
-    cursor: pointer
-  }
+    .w3-half img {
+        margin-bottom: -6px;
+        margin-top: 16px;
 
-  .w3-half img:hover {
-    opacity: 1
-  }
+        cursor: pointer transition: transform .5s ease;
+        /* Animation */
+    }
 
+    .w3-half img:hover {
 
 
-  .active,
-  .accordion:hover {
-    background-color: rgb(85, 8, 8);
-  }
+        -ms-transform: scale(.5);
+        /* IE 9 */
+        -webkit-transform: scale(.5);
+        /* Safari 3-8 */
+        transform: scale(1.2);
+    }
 
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
+
+
+    .active,
+    .accordion:hover {
+        background-color: rgb(85, 8, 8);
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 18px;
+        background-color: rgb(15, 13, 13);
+        display: none;
+        overflow: hidden;
+
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #ccc;
+    }
+
+    /* The progress bar (scroll indicator) */
+    .progress-bar {
+        height: 8px;
+        background: #04AA6D;
+        width: 0%;
+    }
+
+
+
+
+
+
+
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        right: 0;
+        top: 0;
+        float: left;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: fit-content;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 <body>
 
-  <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
-    id="mySidebar"><br>
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
-      style="width:100%;font-size:22px "><i class="far fa-window-close"></i>Close Menu</a>
-    <div class="w3-container">
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+        style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+            style="width:100%;font-size:22px "><i class="far fa-window-close"></i>Close Menu</a>
+        <div class="w3-container">
 
-      <h3 class="w3-padding-64"><b>Barkatullaha<br>Guest House</b></h3>
-    </div>
-    <div class="w3-bar-block">
-      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-      <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
-      <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
-      <a href="#Booking" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Booking Procedure</a>
-      <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packages</a>
-      <a href="#priority" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Priority </a>
-      <a href="#Guideline" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Guideline </a>
-      <a href="#staff" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Staff</a>
-      <a href="#address" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Address</a>
+            <h3 class="w3-padding-64"><b>Barkatullaha<br>Guest House</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
 
-      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
-      <button class="w3-btn  w3-orange w3-large "  ><a href="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true">Booking</a><i class="w3-margin-left  w3-spin fa fa-refresh"></i></button>
-    </div>
-  </nav>
+            <a href="#Booking" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Booking Procedure</a>
+            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packages</a>
+            <a href="#priority" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Priority </a>
+            <a href="#Guideline" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Guideline </a>
+            <a href="#staff" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Staff</a>
+            <a href="#address" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Address</a>
 
-  <!-- Top menu on small screens -->
-  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-    <span>BU GUEST HOUSE</span>
-  </header>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+            <button class="w3-btn  w3-orange w3-large "><a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true">Booking</a><i
+                    class="w3-margin-left  w3-spin fa fa-refresh"></i></button>
+        </div>
+    </nav>
 
-  <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
-    id="myOverlay"></div>
-
-  <!-- !PAGE CONTENT! -->
-  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>BARKATULLAHA GUEST HOUSE</span>
+        <div class="progress-container">
+            <div class="progress-bar " id="myBar"></div>
+        </div>
 
 
-    <!-- Header -->
-    <div class="w3-container w3-mobile"" style=" margin-top:80px" id="showcase">
-      <img src="bu.jpg" class="w3-mobile" style="float: right;">
-      <h1 class="w3-jumbo"><b>Guest House</b></h1>
-      <h1 class="w3-small w3-text-red"><b>B.U BHOPAL</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
+    </header>
 
-    </div>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
 
-    <button class=" accordion w3-button w3-block w3-black w3-margin-bottom"><i class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i>BOOK YOUR ROOM</button>
-    
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
 
-    <div class="panel">
-      <p>Guests who are Comming to
+        <!-- Header -->
+        <div class="w3-container w3-mobile"" style=" margin-top:80px" id="showcase">
+            <img src="bu.jpg" class="w3-mobile" style="float: right;">
+            <h1 class="w3-jumbo"><b>Guest House</b></h1>
+            <h1 class="w3-small w3-xlarge w3-text-red"><b>B.U BHOPAL</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
 
-        attend selection Committee / EC/ Count/ AC/FC/ Viva - Voice / Board of Studies.
+        </div>
 
-        <iframe class="w3-container w3-padding  w3-mobile"
-          src="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true"
-          width="650" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <button id="myBtn" class="w3-xlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom">BOOK YOUR
+            ROOM</button>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-      </p>
-    </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>please fill the form to book your room</p>
+                <iframe id="myFrame" class="w3-container w3-padding  w3-mobile"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true"
+                    width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
 
-
-    <!-- Photo grid (modal) -->
-    <div class="w3-row-padding">
-      <div class="w3-half">
-        <img src="hhh.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
-        <img src="ho.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-        <img src="b1.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
-      </div>
-
-      <div class="w3-half">
-        <img src="b2.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-        <img src="bat.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-        <img src="bu.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
-      </div>
-    </div>
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
-        <p id="caption"></p>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div class="w3-container" id="services" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>About</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-      <p>The University guest house is situated On <b>choshangabad</b> road, adjacent to hate no. 2
-        of
-        B.U
-        compas. guest house is barely three kilometer from the <b>Rani Kamlafati Railway
-          station.</b>
-        <br>It
-        has about 17 Cuest rooms One Committee room and a dining hell for the guests that Visit the
-        University. <br>The guest house has <b>wifi, safe and deen Surroundings</b> and is managed
-        by
-        professional and helpful staff who attend to our guests at all hour.<br>
-
-        Maximum Stay permissible is 3 days. The Guest are required to make entries in the Register
-        with
-        the
-        worst House-keeper before occupying the room, tariff for best house arond The are reflised
+        </div>
 
 
 
-      </p>
-    </div>
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+            <div class="w3-half w3-animate-right">
+                <img src="hhh.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+                <img src="ho.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Light, white and tight scandinavian design">
+                <img src="b1.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+            </div>
 
-    <!-- Designers -->
-    <div class="w3-container" id="Booking" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>Booking Procedure</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>The best team in the world.</p>
-      <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
-        elit, sed do eiusmod tempor
-        incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      
-    </div>
+            <div class="w3-half w3-animate-zoom">
+                <img src="b2.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+                <img src="bat.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+                <img src="bu.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+            </div>
+        </div>
 
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-animate-zoom w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image w3-animate-zoom">
+                <p id="caption"></p>
+            </div>
+        </div>
 
-    <div class="w3-container" id="check-In" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>check-In/check-Out process</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      
-      <p>
-        check-In / check out ;- 24 hours from the time of Arrival. The guest may.
-        
-        check in at any time. However, for the purpose of accounting, a day means 24 hours from the time of occupation / arrival. Fraction of day will be counted as full day. Ordinary a person will be allowed to stay for maximum 3 days only. In exceptional Cases the extecision may be granted subject to the pinior approval of the Vice-chancellor depending upon the availability of rooms.
-        
-        The cruest House frovide beddings. An inventory of articles. for Lose in the rooms is quailable in each room. The quests are requested to check those items at the time of occupying the room. The guests are responsible for proper use and upkeep of the materials & o provided in the rooms as also in the guest house. They shall be liable to pay charges for any loss or damage caused during their stay.
-        
-      </p>
-      <p><b>Our designers are thoughtfully chosen</b>:</p>
-    </div>
+        <!-- Services -->
+        <div class="w3-container" id="about" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red w3-animate-right"><b>About</b></h1>
+            <hr style="width:50px;border:5px solid red w3-animate-zoom" class="w3-round">
+            <p>
+                The university Guest house is situated on <b>Hoshangabad road</b> adjacent to gate no two of BU campus .
+                <br>Guest house is barely three kilometer from the Rani Kamlapati railway station . it has about <b>17
+                guest room ,
+                One committee room and a dinning hall </b> the guest that visited the university .
+                <br> The Guest house has <br>
+                Wi-Fi , safe and clean surrounding and is managed by professional and helpful staff who attend to our
+                guest at
+                all hours.
+                Guest house is primarily meant for official guest of the Bu.<br>
+                Participates of seminar, workshop conference training programs organized by the University.
 
-
-
-    <div class="w3-container" id="priority" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>priority</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>1. The guest House are primarily meant for official guests of the BU. participant of Seminars, Workshop,
-        Conferences, training programs organized by the University.
-
-        Booking Procedure & All Bookings are made through the Registrar,
-
-        muest house office, Website and app. Teachers from other est Universities, State University officers who come to
-        bhopal for official work and are sponsored by their respective institutions may also be accommodated provided
-        they white for reservation of rooms. such provisional Bookings are liable to concelled with</p>
-      <p>2. A Priocity list has been approved for allotment of rooms in the University Quest poust which is as Jollows
-      </p>
-
-    </div>
-
-
-
-
-
-
-
-    <!-- The Team -->
-    <div class="w3-row-padding w3-grayscale">
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>FIRST Priority:</h3>
-
-            <p>Gursts who are Comming to
-
-              attend selection Committee / EC/ Count/ AC/FC/ Viva - Voice / Board of Studies
             </p>
-          </div>
         </div>
-      </div>
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>SECOND Priority</h3>
 
-            <p>Vice Chancellor; Registrans and visiting team from vuc / HRD / Highen education department. Radbhandan
-              official guests</p>
-          </div>
+        <!-- Designers -->
+        <div class="w3-container" id="Booking" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red w3-animate-left"><b>Booking Procedure</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>
+
+                All booking are made through <b>the registrar,
+                    Guest house office, website and app.</b><br><br>
+                Teacher from other University ,States University officers who come to to Bhopal for official Work and
+                are
+                sponsored by their respective institutions may also be accommodated provided there write for reservation
+                of
+                rooms.<br> Such provisional Booking are liable to cancelled without assigning any reason in case the
+                University
+                needs to the rooms for its own use.<br>
+
+                The maximum stay permission is three days Guest are required to make entries in the register with the
+                guest
+                House keeper before Occupying the
+                Room . the tariff for the guest house is revised …..
+
+
+            </p>
+
         </div>
-      </div>
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>THIRD Priority</h3>
 
-            <P>Faculty members of different Universities, Newly appointment feculty members, State University
-              officials.. state</P>
 
-          </div>
+        <div class="w3-container" id="check-In" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red w3-animate-zoom"><b>check-In/check-Out process</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+
+            <p>
+
+
+                <b>24 hours from the time of Arrival.</b> The guest may check in at any time ,However , for the
+                purpose of accounting a day means 24 house from the time of occupational/ arrival. <br>
+                Fraction of day will be count as full day .<b>Ordinary person will be allowed to stay for maximum 5 days
+                    only .</b><br>In exceptional cases the extension may be granted subject to the prior approval of the
+                vice – chancellor depending upon the availability of rooms
+                The guest those provide beddings an inventory of articles for use in the rooms is available in each
+                rooms.The guest are requested to check there item at the time of occupying the room .The guest are
+                responsible for the proper use and upkeep of the materials provided in the rooms as also in the guest
+                house .They shall be liable to pay charges for any loss or damage caused during their stay.
+
+
+
+            </p>
         </div>
-      </div>
 
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>FORTH Priority</h3>
 
-            <P>Faculty members of different Universities, Newly appointment feculty members, State University
-              officials.. state</P>
 
-          </div>
+        <div class="w3-container" id="priority" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red w3-animate-zoom"><b>priority</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>1. The guest House are primarily meant for official guests of the BU. participant of Seminars, Workshop,
+                Conferences, training programs organized by the University.
+
+                Booking Procedure & All Bookings are made through the Registrar,
+
+                muest house office, Website and app. Teachers from other est Universities, State University officers who
+                come to
+                bhopal for official work and are sponsored by their respective institutions may also be accommodated
+                provided
+                they white for reservation of rooms. such provisional Bookings are liable to concelled with</p>
+            <p><b>The priority list has been approved for allotment of rooms in the University Guest house which is as
+                    follow</b></p>
+            </p>
+
         </div>
-      </div>
-    </div>
-
-    <!-- Packages / Pricing Tables -->
-    <div class="w3-container" id="packages" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-
-      <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure</p>
-    </div>
-
-    <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-light-grey w3-center">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32"><i class="fas fa-user-check"></i>Basic</li>
-          <li class="w3-padding-16">Floorplanning</li>
-          <li class="w3-padding-16">10 hours support</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">20% furniture discount</li>
-          <li class="w3-padding-16">Good deals</li>
-          <li class="w3-padding-16">
-            <h2>$ 199</h2>
-            <span class="w3-opacity">per room</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="w3-half">
-        <ul class="w3-ul w3-light-grey w3-center">
-          <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Floorplanning</li>
-          <li class="w3-padding-16">50 hours support</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">50% furniture discount</li>
-          <li class="w3-padding-16">GREAT deals</li>
-          <li class="w3-padding-16">
-            <h2>$ 249</h2>
-            <span class="w3-opacity">per room</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-    </div>
 
 
 
 
-    <div class="w3-panel w3-red w3-leftbar w3-padding-32" id="Guideline" >
-      <h1><i class="fa fa-window-close w3-deep-orange w3-padding w3-margin-right"></i>Guideline</h1>
-
-      <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i>1. The guest House are
-        primarily
-        meant for official guests of the BU. participant of Seminars, Workshop, Conferences, training
-        programs
-        organized by the University.
-
-        Booking Procedure & All Bookings are made through the Registrar, guest house office, Website and
-        app.
-        Teachers from other Universities, State University officers who come to bhopal for official work
-        and
-        are
-        sponsored by their respective institutions may also be accommodated provided they white for
-        reservation
-        of rooms. such provisional Bookings are liable to concelled without assigning any reason in case
-        the
-        University needs to the rooms for its own use.
-
-        2. A Priocity list has been approved for allotment of rooms in the University Quest poust which
-        is
-        as
-        follows
-      </h6>
-
-      <ul>
-
-        <p>1. The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or coming
-          late should inform the Guest-House-Keeper/Security Guard in advance to avoid any inconvenience.
-
-          1. The University authorities are not responsible for valuable items kept in the rooms.
 
 
-        </p>
 
-        <p>2. Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa. i. Alcoholic
-          drinks in the Guest House are strictly prohibited.
+        <!-- The Team -->
+        <div class="w3-row-padding w3-grayscale ">
+            <div class="w3-quarter m4   w3-margin-bottom">
+                <div class="w3-light-grey w3-hover-red w3-animate-zoom">
+                    <div class="w3-container">
+                        <h3>FIRST Priority:</h3>
 
-          >. Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the Requisitioner.
+                        <p>
 
-          *. The tariff is subject to change at any time without notice. 1. Visitor for guests residing in Guest House
-          is allowed from 10.00 a.m. to 10.00 p.m. only.
+                            Guest who are coming to attend Selection Committee/ EC/ Court/ Ac/ Fc /viva- voice/ Board of
+                            studies.
 
-        </p>
-
-        <p>3.Pets are not allowed
-
-          1. Damaging of property or defacing any notice/poster/walls
-
-          etc. of the Guest Houses is illegal. . We do not accept credit/debit cards. Payment is accepted only in cash.
-        </p>
-
-        <p>4.All visitors coming to see a guest staying in the guest house shall have to make entries in the register
-          available with the security guard.</p>
-
-        <p>Cooking/Washing is not allowed in the rooms. 1. Food/meals, except tea/coffee/cold drinks, are served
-
-          only in the dinning hall.
-        </p>
-
-        <p>5.The guests are requested to switch off the lights and fans, close windows and lock their rooms when they go
-          out.</p>
+                        </p>
 
 
-        <p>Please do not pay tips to the staff.
+                    </div>
+                </div>
+            </div>
+            <div class="w3-quarter m4 w3-margin-bottom">
+                <div class="w3-light-green w3-hover-grayscale w3-animate-zoom">
+                    <div class="w3-container">
+                        <h3>SECOND Priority</h3>
 
-          '. The Guest House is meant for you. Please help us keep clean
-        </p>
+                        <p>
 
-      </ul>
-
-      <!-- Contact -->
-      <div class="w3-container" id="contact" style="margin-top:75px">
-        <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
-        <hr style="width:50px;border:5px solid red" class="w3-round">
-        <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new
-          people!</p>
-
-      </div>
-
-      <!-- End page content -->
-    </div>
+                            Vice chancellor Visitor and Visiting Team from UGC/ HRD /Higher education Department .
 
 
-    <h1 id="staff">our staff to help you</h1>
-    <!-- The Team -->
-    <div class="w3-row-padding w3-grayscale">
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>pramodh mishra</h3>
-            <p class="w3-opacity">manager</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-quarter m4 w3-margin-bottom">
+                <div class="w3-light-grey w3-hover-red w3-animate-left">
+                    <div class="w3-container">
+                        <h3>THIRD Priority</h3>
+
+                        <p>
+
+                            Faculty member of different University Newly appointed faculty member / state university
+                            official guests.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-quarter m4 w3-margin-bottom">
+                <div class="w3-light-grey w3-hover-red w3-animate-right">
+                    <div class="w3-container">
+                        <h3>FORTH Priority</h3>
+
+                        <p>Higher education Department officers, Personal Guest of Bu community Visiting faculty/
+                            Visiting Scholars/ Students and seminar participants.</p>
+
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <div class="w3-container">
-            <h3>kamlesh sharma</h3>
-            <p class="w3-opacity">assistent</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          </div>
+
+        <!-- Packages / Pricing Tables -->
+        <div class="w3-container" id="packages" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+
+            <h1>ROOM CHARGES </h1>
         </div>
-      </div>
-      <div class="w3-col m4 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-          <div class="w3-container">
-            <h3>Mike Ross</h3>
-            <p class="w3-opacity">cooking staff</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-quarter w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32"><i class="fas fa-user-check"></i>NON-AC</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">10 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">20% furniture discount</li>
+                    <li class="w3-padding-16">Good deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 199</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="w3-quarter">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-green w3-xlarge w3-padding-32">AC</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">50 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">50% furniture discount</li>
+                    <li class="w3-padding-16">GREAT deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 249</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="w3-quarter">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-yellow w3-xlarge w3-padding-32">SPECIAL</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">50 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">50% furniture discount</li>
+                    <li class="w3-padding-16">GREAT deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 249</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-quarter">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-blue w3-xlarge w3-padding-32">Pro</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">50 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">50% furniture discount</li>
+                    <li class="w3-padding-16">GREAT deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 249</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-      </div>
-    </div>
+
+
+
+
+        <button class=" accordion w3-xxlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom"><i
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i> BOOK YOUR ROOM<i
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i></button>
+
+
+
+        <div class="panel">
+            <p>Guests who are Comming to
+
+                attend selection Committee / EC/ Count/ AC/FC/ Viva - Voice / Board of Studies.
+
+                <iframe class="w3-container w3-padding  w3-mobile"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true"
+                    width="650" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
+            </p>
+        </div>
+
+
+
+
+        <div class="w3-panel w3-red w3-leftbar w3-padding-32" id="Guideline">
+            <h1><i class="fa fa-window-close w3-deep-orange w3-padding w3-margin-right"></i>Guideline</h1>
+
+            <ul>
+                <p><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i>1. The guest House are
+                    primarily
+                    meant for official guests of the BU. participant of Seminars, Workshop, Conferences, training
+                    programs
+                    organized by the University.
+
+                    Booking Procedure & All Bookings are made through the Registrar, guest house office, Website and
+                    app.
+                    Teachers from other Universities, State University officers who come to bhopal for official work
+                    and
+                    are
+                    sponsored by their respective institutions may also be accommodated provided they white for
+                    reservation
+                    of rooms. such provisional Bookings are liable to concelled without assigning any reason in case
+                    the
+                    University needs to the rooms for its own use.
+
+                    2. A Priocity list has been approved for allotment of rooms in the University Quest poust which
+                    is
+                    as
+                    follows
+                </p>
+
+
+
+                <p>1. The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or
+                    coming
+                    late should inform the Guest-House-Keeper/Security Guard in advance to avoid any inconvenience.
+
+                    1. The University authorities are not responsible for valuable items kept in the rooms.
+
+
+                </p>
+
+                <p>2. Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa. i.
+                    Alcoholic
+                    drinks in the Guest House are strictly prohibited.
+
+                    >. Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the
+                    Requisitioner.
+
+                    *. The tariff is subject to change at any time without notice. 1. Visitor for guests residing in
+                    Guest House
+                    is allowed from 10.00 a.m. to 10.00 p.m. only.
+
+                </p>
+
+                <p>3.Pets are not allowed
+
+                    1. Damaging of property or defacing any notice/poster/walls
+
+                    etc. of the Guest Houses is illegal. . We do not accept credit/debit cards. Payment is accepted only
+                    in cash.
+                </p>
+
+                <p>4.All visitors coming to see a guest staying in the guest house shall have to make entries in the
+                    register
+                    available with the security guard.</p>
+
+                <p>Cooking/Washing is not allowed in the rooms. 1. Food/meals, except tea/coffee/cold drinks, are served
+
+                    only in the dinning hall.
+                </p>
+
+                <p>5.The guests are requested to switch off the lights and fans, close windows and lock their rooms when
+                    they go
+                    out.</p>
+
+
+                <p>Please do not pay tips to the staff.
+
+                    '. The Guest House is meant for you. Please help us keep clean
+                </p>
+
+            </ul>
+
+            <!-- Contact -->
+            <div class="w3-container" id="contact" style="margin-top:75px">
+                <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+                <hr style="width:50px;border:5px solid red" class="w3-round">
+
+
+            </div>
+
+            <!-- End page content -->
+        </div>
+
+
+        <h1 id="staff">our staff to help you</h1>
+        <!-- The Team -->
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <div class="w3-container">
+                        <h3>pramodh mishra</h3>
+                        <p class="w3-opacity">manager</p>
+
+                        <p>123132165<br>1232169<br>12121315<br>praodhmishera@gmail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <div class="w3-container">
+                        <h3>kamlesh sharma</h3>
+                        <p class="w3-opacity">assistent</p>
+                        <p>992111110<br>122266556<br>122331566</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Mike Ross</h3>
+                        <p class="w3-opacity">cooking staff</p>
+                        <p>1234567898<br>12315455</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -450,76 +629,131 @@
 
 
 
-    <!-- W3.CSS Container -->
-    <div class="w3-light-grey w3-container w3-padding-32" id="address"  style="margin-top:75px;padding-right:58px">
-      
-      <p class="w3-right"> Hoshangabad road <br>
-        near rani kamlapati Railway station<br>
-        Bhopal madhya pradesh<br>
-        mobile no. 123456789<br>
+        <!-- W3.CSS Container -->
+        <div class="w3-light-grey w3-container w3-padding-32" id="address" style="margin-top:75px;padding-right:58px">
+
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <div class="w3-container">
+                        <h4>Address</h4>
+                        <h3>Hoshangabad road</h3>
+                        <p class="w3-opacity">near</p>
+                        <p>Rani Kamlapati Railway Station<br>
+                            BHOPAL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+            <h5>Find Us On</h5>
+            <div class="w3-xlarge w3-padding-16">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <p style="color: blanchedalmond; font-size: 2rem;">Powered by <a href="arjunsharma1228@gmail.com"
+                    target="_blank" class="w3-hover-text-green">BU BHOPAL</a>
+            </p>
+        </footer>
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
 
 
-      </p>
-    </div>
-
-    <!-- Footer -->
-    <footer class="w3-padding-32 w3-black w3-center w3-margin-top">
-      <h5>Find Us On</h5>
-      <div class="w3-xlarge w3-padding-16">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-      </div>
-      <p style="color: blanchedalmond; font-size: 2rem;">Powered by <a href="arjunsharma1228@gmail.com" target="_blank"
-          class="w3-hover-text-green">BU BHOPAL</a>
-      </p>
-    </footer>
-    <script>
-      // Script to open and close sidebar
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
 
 
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
 
 
-      var acc = document.getElementsByClassName("accordion");
-      var i;
-
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          /* Toggle between adding and removing the "active" class,
-          to highlight the button that controls the panel */
-          this.classList.toggle("active");
-
-          /* Toggle between hiding and showing the active panel */
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      }
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
 
 
-      // Modal Image Gallery
-      function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-      }
-    </script>
+            window.onscroll = function () { myFunction() };
+
+            function myFunction() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("myBar").style.width = scrolled + "%";
+            }
+
+
+
+
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+
+            <script>
+function myFunction() {
+  var iframe = document.getElementById("myFrame");
+  var elmnt = iframe.contentWindow.document.getElementsByTagName("H1")[0];
+  elmnt.style.display = "none";
+}
+
+
+        </script>
 
 </body>
 
