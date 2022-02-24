@@ -8,126 +8,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        font-family: "Poppins", sans-serif
-    }
+<link rel="stylesheet" href="index.css">
 
-    body {
-        font-size: 16px;
-        top: 400px;
-    }
-
-    .w3-half img {
-        margin-bottom: -6px;
-        margin-top: 16px;
-
-        cursor: pointer transition: transform .5s ease;
-        /* Animation */
-    }
-
-    .w3-half img:hover {
-
-
-        -ms-transform: scale(.5);
-        /* IE 9 */
-        -webkit-transform: scale(.5);
-        /* Safari 3-8 */
-        transform: scale(1.2);
-     }
-
-
-
-    .active,
-    .accordion:hover {
-        background-color: rgb(85, 8, 8);
-    }
-
-    /* Style the accordion panel. Note: hidden by default */
-    .panel {
-        padding: 0 18px;
-        background-color: rgb(15, 13, 13);
-        display: none;
-        overflow: hidden;
-
-    }
-
-    .progress-container {
-        width: 100%;
-        height: 8px;
-        background: #ccc;
-    }
-
-    /* The progress bar (scroll indicator) */
-    .progress-bar {
-        height: 8px;
-        background: #04AA6D;
-        width: 0%;
-    }
-
-
-
-
-
-
-
-    .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Stay in place */
-        z-index: 1;
-        /* Sit on top */
-        padding-top: 100px;
-        /* Location of the box */
-        left: 0;
-        right: 0;
-        top: 0;
-        float: left;
-        width: 100%;
-        /* Full width */
-        height: 100%;
-        /* Full height */
-        overflow: auto;
-        /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0);
-        /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Black w/ opacity */
-    }
-
-    /* Modal Content */
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: fit-content;
-    }
-
-    /* The Close Button */
-    .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
 
 <body>
 
@@ -135,13 +23,15 @@
     <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
         style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
-            style="width:100%;font-size:22px "><i class="far fa-window-close"></i>Close Menu</a>
+            style="width:100%;font-size:22px "><i class="glyphicon glyphicon-remove"></i></a>
         <div class="w3-container">
+
 
             <h3 class="w3-padding-64"><b>Barkatullah<br>Guest House</b></h3>
         </div>
         <div class="w3-bar-block">
-            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i
+                    class="glyphicon glyphicon-user"></i>Home</a>
             <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
             <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
 
@@ -189,11 +79,13 @@
 
         </div>
 
-        <a href="#bo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">BOOK</a>
+        <a href="#bo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i
+                class="fa-solid fa-house-user"></i>BOOK</a>
 
 
-        <button id="myBtn" class="w3-xlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom">BOOK YOUR
-            ROOM2</button>
+        <button id="myBtn" class="w3-xlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom"><i
+                class="material-icons">cloud</i>BOOK YOUR
+            ROOM</button>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -212,15 +104,15 @@
                             required="" />
                     </div>
                     <div class="form-group">
-                        <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value=""
-                            required="" />
+                        <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *"
+                            value="" required="" />
                     </div>
-    
+
                     <div class="form-group">
                         <input type="datetime" name="Phone" class="form-control" placeholder="checkin date *" value=""
                             required="" />
                     </div>
-    
+
                     <div class="form-group">
                         <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
                     </div>
@@ -231,15 +123,15 @@
 
 
 
-        
-        
+
+
 
 
 
         <!-- Photo grid (modal) -->
         <div class="w3-row-padding">
             <div class="w3-half w3-animate-right">
-                <img src="buU(6).jpeg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+                <img src="hous.jpeg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
                 <img src="bu (1).jpeg" style="width:100%" onclick="onClick(this)"
                     alt="Light, white and tight scandinavian design">
 
@@ -273,7 +165,7 @@
             <h1 class="w3-xxxlarge w3-text-red w3-animate-right"><b>About</b></h1>
             <hr style="width:50px;border:5px solid red w3-animate-zoom" class="w3-round">
             <p>
-                The university Guest house is situated on <b>Hoshangabad road</b> adjacent to gate no two of BU campus .
+                The university Guest house is situated on <b>Hoshangabad road</b> adjacent to gate number 2. of BU campus .
                 Guest house is barely three kilometer from the Rani Kamlapati railway station . it has about <b>17
                     guest room ,
                     One committee room and a dinning hall </b> the guest that visited the university .
@@ -292,19 +184,16 @@
         <div class="w3-row-padding">
             <div class="w3-half  w3-margin-bottom">
                 <ul class="w3-ul w3-light-grey w3-center">
-                    <li class=" w3-blue w3-xlarge w3-padding-32"><i class="fas fa-user-check"></i>ROOM FEATURS</li>
-                    <li class="w3-padding-16">Free High-speed WI-FI Internet</li>
-                    <li class="w3-padding-16">10 hours support</li>
-                    <li class="w3-padding-16">Photography</li>
-                    <li class="w3-padding-16">20% furniture discount</li>
-                    <li class="w3-padding-16">Good deals</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 199</h2>
-                        <span class="w3-opacity">per room</span>
+                    <li class=" w3-blue w3-xlarge w3-padding-32"><i class="glyphicon glyphicon-user"></i>ROOM FEATURS
                     </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
+                    <li class="w3-padding-16 w3-hover-black "><i class="FaAngleDoubleRight"></i>Free High-speed WI-FI
+                        Internet</li>
+                    <li class="w3-padding-16 w3-hover-red ">Spacious room</li>
+                    <li class="w3-padding-16 w3-hover-blue ">Attached Washroom</li>
+                    <li class="w3-padding-16 w3-hover-gray ">Hot Water</li>
+                    <li class="w3-padding-16 w3-hover-orange ">Clean Room</li>
+                    <li class="w3-padding-16 w3-hover-black">17 AC Room with DTH Attached</li>
+
                 </ul>
             </div>
 
@@ -312,19 +201,14 @@
 
             <div class="w3-half">
                 <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-green w3-xlarge w3-padding-32">GUEST HOUSE FACILITIESS</li>
-                    <li class="w3-padding-16">Floorplanning</li>
-                    <li class="w3-padding-16">50 hours support</li>
-                    <li class="w3-padding-16">Photography</li>
-                    <li class="w3-padding-16">50% furniture discount</li>
-                    <li class="w3-padding-16">GREAT deals</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 249</h2>
-                        <span class="w3-opacity">per room</span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
+                    <li class="w3-green w3-xlarge w3-padding-32">GUEST HOUSE FACILITIES</li>
+                    <li class="w3-padding-16  w3-hover-black     ">Express check-In & check-Out</li>
+                    <li class="w3-padding-16  w3-hover-red     ">24- Hours front Help Desk</li>
+                    <li class="w3-padding-16  w3-hover-blue     ">Waiting Lobby</li>
+                    <li class="w3-padding-16  w3-hover-gray   ">Dinning </li>
+                    <li class="w3-padding-16  w3-hover-orange    ">Committee Room</li>
+                    <li class="w3-padding-16  w3-hover-black   ">Committed staff available 24*7</li>
+
                 </ul>
             </div>
 
@@ -338,7 +222,7 @@
 
         <!-- Designers -->
         <div class="w3-container" id="Booking" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red w3-animate-left"><b>Booking Procedure</b></h1>
+            <h1 class="w3-xlarge w3-text-red w3-animate-left"><b>Booking Procedure</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
             <p>
 
@@ -364,7 +248,7 @@
 
 
         <div class="w3-container" id="check-In" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red w3-animate-zoom"><b>check-In/check-Out process</b></h1>
+            <h1 class="w3-xlarge w3-text-red w3-animate-zoom"><b>check-In/check-Out process</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
 
             <p>
@@ -388,7 +272,7 @@
 
 
         <div class="w3-container" id="priority" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red w3-animate-zoom"><b>priority</b></h1>
+            <h1 class="w3-xlarge w3-text-red w3-animate-zoom"><b>priority</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
             <p>1. The guest House are primarily meant for official guests of the BU. participant of Seminars, Workshop,
                 Conferences, training programs organized by the University.
@@ -404,6 +288,41 @@
                     follow</b></p>
             </p>
 
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>First priority</h3>
+                        <p>Guest who are coming to attend Selection Committee/ EC/ Court/ AC/ FC/viva- voice/ Board of studies.</p>
+                        
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Second priority</h3>
+                        <p>Vice chancellor /Registrar Visitor’s and Visiting Team from UGC /Higher education Department .</p>
+                        
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Third Priority</h3>
+                        <p>faculty member of different University Newly appointed faculty member / state university official guests.</p>
+                        
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Fourth Priority</h3>
+                        <p>Higher education Department officers, Personal Guest of Bu community Visiting faculty/ Visiting Scholars/ Students and seminar participants.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
 
@@ -413,64 +332,12 @@
 
 
         <!-- The Team -->
-        <div class="w3-row-padding w3-grayscale ">
-            <div class="w3-quarter m4   w3-margin-bottom">
-                <div class="w3-light-grey w3-hover-red w3-animate-zoom">
-                    <div class="w3-container">
-                        <h3>FIRST Priority:</h3>
-
-                        <p>
-
-                            Guest who are coming to attend Selection Committee/ EC/ Court/ Ac/ Fc /viva- voice/ Board of
-                            studies.
-
-                        </p>
+        <div class="row"></div>
 
 
-                    </div>
-                </div>
-            </div>
-            <div class="w3-quarter m4 w3-margin-bottom">
-                <div class="w3-light-green w3-hover-grayscale w3-animate-zoom">
-                    <div class="w3-container">
-                        <h3>SECOND Priority</h3>
-
-                        <p>
-
-                            Vice chancellor Visitor and Visiting Team from UGC/ HRD /Higher education Department .
 
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-quarter m4 w3-margin-bottom">
-                <div class="w3-light-grey w3-hover-red w3-animate-left">
-                    <div class="w3-container">
-                        <h3>THIRD Priority</h3>
 
-                        <p>
-
-                            Faculty member of different University Newly appointed faculty member / state university
-                            official guests.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-quarter m4 w3-margin-bottom">
-                <div class="w3-light-grey w3-hover-red w3-animate-right">
-                    <div class="w3-container">
-                        <h3>FORTH Priority</h3>
-
-                        <p>Higher education Department officers, Personal Guest of Bu community Visiting faculty/
-                            Visiting Scholars/ Students and seminar participants.</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Packages / Pricing Tables -->
         <div class="w3-container" id="packages" style="margin-top:75px">
@@ -480,44 +347,36 @@
             <h1>ROOM CHARGES </h1>
         </div>
 
-        <div class="w3-row-padding">
-            <div class="w3-half w3-margin-bottom">
+        <div class="w3-row-padding ">
+            <div class="w3-half  w3-margin-bottom">
+
                 <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-dark-grey w3-xlarge w3-padding-32"><i class="fas fa-user-check"></i>NON-AC</li>
-                    <li class="w3-padding-16">Floorplanning</li>
-                    <li class="w3-padding-16">10 hours support</li>
-                    <li class="w3-padding-16">Photography</li>
-                    <li class="w3-padding-16">20% furniture discount</li>
-                    <li class="w3-padding-16">Good deals</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 199</h2>
+                    <li class="w3-red w3-xxlarge w3-padding-16 w3-hover-blue"><i class="fas fa-user-check"></i>AC</li>
+                    <li class="w3-padding-16 w3-hover-green">Personal Visit</li>
+
+                    <li class="w3-padding-16 w3-hover-green">
+                        <h2> 199</h2>
+                        <span class="w3-opacity ">per room</span>
+                    </li>
+
+                    <li class="w3-padding-16 w3-hover-gray">Official Visit</li>
+
+                    <li class="w3-padding-16 w3-hover-gray">
+                        <h2> 400</h2>
                         <span class="w3-opacity">per room</span>
                     </li>
                     <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+
+
+                        <a href="#bo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i
+                                class="fa-solid fa-house-user"></i>BOOK</a>
                     </li>
                 </ul>
             </div>
 
 
 
-            <div class="w3-half">
-                <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-green w3-xlarge w3-padding-32">AC</li>
-                    <li class="w3-padding-16">Floorplanning</li>
-                    <li class="w3-padding-16">50 hours support</li>
-                    <li class="w3-padding-16">Photography</li>
-                    <li class="w3-padding-16">50% furniture discount</li>
-                    <li class="w3-padding-16">GREAT deals</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 249</h2>
-                        <span class="w3-opacity">per room</span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
+
 
 
 
@@ -551,7 +410,7 @@
         <div class="w3-panel w3-red w3-xlarge  w3-leftbar w3-padding-32" id="Guideline">
             <h1><i class="fa fa-window-close w3-deep-orange w3-padding w3-margin-right"></i>Guideline</h1>
 
-            <ul>
+            <ul class=" w3-large">
                 <p><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i>1. The guest House are
                     primarily
                     meant for official guests of the BU. participant of Seminars, Workshop, Conferences, training
@@ -644,7 +503,7 @@
         <div class="w3-panel w3-xlarge w3-green w3-hover-blue w3-leftbar w3-padding-32" id="tc">
             <h1><i class="fa fa-window-close w3-deep-green w3-padding w3-margin-right"></i>TERMS AND CONDITIONS</h1>
 
-            <ol>
+            <ol class=" w3-large">
                 <p>
                     • Persons staying in the guest house are not entitled to bring in unauthorized guest(s) to stay with
                     them in the Guest House<br>
@@ -684,109 +543,61 @@
 
 
             <!-- Contact -->
-            <div class="w3-container" id="contact" style="margin-top:75px">
-                <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
-                <hr style="width:50px;border:5px solid red" class="w3-round">
 
-
-            </div>
 
             <!-- End page content -->
         </div>
 
 
         <h1 id="staff">our staff to help you</h1>
-        <!-- The Team -->
-        <div class="w3-row-padding w3-grayscale">
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container">
-                        <h3>pramodh mishra</h3>
-                        <p class="w3-opacity">manager</p>
+        <div class="staff" style="box-sizing: border-box;">
+            <!-- The Team -->
 
-                        <p>123132165<br>1232169<br>12121315<br>praodhmishera@gmail</p>
+            
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>•	DR.Puneet Shukla </h3>
+                        <p>(officer-incharge)</p>
+                        <p>7649884660</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>•	Mr.Raghvendra Sharma</h3>
+                        <p> (Care Taker)</p>
+                        <p>9425358405</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Mr.Dinesh lal karn</h3>
+                        <p>(Office Assistant)</p>
+                        <p>9479376405</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card" style="text-align: left; ">
+                        <p>Mr.suresh(cook)
+                            
+                            </p>
+                        <p>	Mr.Shyam Sundar(Room Bearer)
+                            </p>
+                        <p>	Mr.Deendayal saket(Room Bearer)
+                            </p>
+                        <p>Mr.Gulab Lahat(Room Bearer)</p>
                     </div>
                 </div>
             </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container">
-                        <h3>kamlesh sharma</h3>
-                        <p class="w3-opacity">assistent</p>
-                        <p>992111110<br>122266556<br>122331566</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Mike Ross</h3>
-                        <p class="w3-opacity">cooking staff</p>
-                        <p>1234567898<br>12315455</p>
-                    </div>
-                </div>
-            </div>
+
+
+
         </div>
 
-        <div class="w3-row-padding w3-grayscale">
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-                    <div class="w3-container">
-                        <h3>John Doe</h3>
-                        <p class="w3-opacity">CEO & Founder</p>
-                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
-                            elementum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Jane Doe</h3>
-                        <p class="w3-opacity">Designer</p>
-                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
-                            elementum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Mike Ross</h3>
-                        <p class="w3-opacity">Architect</p>
-                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
-                            elementum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-        <!-- W3.CSS Container -->
-        <div class="w3-light-grey w3-container w3-padding-32" id="address" style="margin-top:75px;padding-right:58px">
-
-            <div class="w3-col m4 w3-margin-bottom">
-                <div class="w3-light-grey">
-                    <div class="w3-container">
-                        <h4>Address</h4>
-                        <h3>Hoshangabad road</h3>
-                        <p class="w3-opacity">near</p>
-                        <p>Rani Kamlapati Railway Station<br>
-                            BHOPAL
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -794,7 +605,7 @@
         <div class="w3-container" id="bo" style="margin-top:75px">
             <h1 class="w3-xxxlarge w3-text-red"><b>BOOK</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
-            
+
             <form method="post" autocomplete="off" name="google-sheet">
                 <div class="form-group">
                     <input type="text" name="Name" class="form-control" placeholder="Your Name *" value=""
@@ -824,6 +635,10 @@
 
         <!-- Footer -->
         <footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+           <h4>Phone Number:0755 2517210</h4>
+           <email>Email I’d-Guesthousebu@gmail.com</email><br>
+           <a href="www.bubhopal.ac.in">Website-www.bubhopal.ac.in</a>
+           
             <h5>Find Us On</h5>
             <div class="w3-xlarge w3-padding-16">
                 <i class="fa fa-facebook-official w3-hover-opacity"></i>
