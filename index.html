@@ -14,6 +14,16 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="index.css">
 
 
@@ -31,20 +41,20 @@
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i
-                    class="glyphicon glyphicon-user"></i>Home</a>
+                    class="glyphicon glyphicon-user"></i>  Home</a>
             <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
-            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Photo Gallery</a>
 
             <a href="#Booking" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Booking Procedure</a>
-            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packages</a>
+            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Terrif</a>
             <a href="#priority" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Priority </a>
-            <a href="#Guideline" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Guideline </a>
+            
             <a href="#staff" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Staff</a>
-            <a href="#address" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Address</a>
-            <a href="#tc" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">TERMS AND CONDITIONS</a>
+           
+            <a href="#tc" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Terms and Conditions</a>
 
-            <a href="#bo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">BOOK</a>
-            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+            <a href="#bo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Book</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact Us</a>
             <button class="w3-btn  w3-orange w3-large "><a
                     href="https://docs.google.com/forms/d/e/1FAIpQLScIJVIeGdE9sdEyhwyC061yvXO7u0aMmlogkFSyer-C2sVA4A/viewform?embedded=true">Booking</a><i
                     class="w3-margin-left  w3-spin fa fa-refresh"></i></button>
@@ -84,7 +94,7 @@
 
 
         <button id="myBtn" class="w3-xlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom"><i
-                class="material-icons">cloud</i>BOOK YOUR
+                class="material-icons">cloud</i>    BOOK YOUR
             ROOM</button>
 
         <!-- The Modal -->
@@ -108,9 +118,10 @@
                             value="" required="" />
                     </div>
 
-                    <div class="form-group">
-                        <input type="datetime" name="Phone" class="form-control" placeholder="checkin date *" value=""
-                            required="" />
+                    <div class="form-group" id='datetimepicker1'>
+                        <input type="datetime-local" name="Phone" class="form-control" placeholder="checkin date *" value=""
+                            required="" /> 
+                            
                     </div>
 
                     <div class="form-group">
@@ -165,17 +176,7 @@
             <h1 class="w3-xxxlarge w3-text-red w3-animate-right"><b>About</b></h1>
             <hr style="width:50px;border:5px solid red w3-animate-zoom" class="w3-round">
             <p>
-                The university Guest house is situated on <b>Hoshangabad road</b> adjacent to gate number 2. of BU campus .
-                Guest house is barely three kilometer from the Rani Kamlapati railway station . it has about <b>17
-                    guest room ,
-                    One committee room and a dinning hall </b> the guest that visited the university .
-                The Guest house has
-                Wi-Fi , safe and clean surrounding and is managed by professional and helpful staff who attend to our
-                guest at
-                all hours.
-                Guest house is primarily meant for official guest of the Bu.<br>
-                Participates of seminar, workshop conference training programs organized by the University.
-
+                The university has a guest house located on Gate number-2 of our Campus. The accommodation is mainly meant for the guests of the University either invited or attending the programmes at the University campus. 
             </p>
         </div>
 
@@ -355,14 +356,14 @@
                     <li class="w3-padding-16 w3-hover-green">Personal Visit</li>
 
                     <li class="w3-padding-16 w3-hover-green">
-                        <h2> 199</h2>
+                        <h2> 400</h2>
                         <span class="w3-opacity ">per room</span>
                     </li>
 
                     <li class="w3-padding-16 w3-hover-gray">Official Visit</li>
 
                     <li class="w3-padding-16 w3-hover-gray">
-                        <h2> 400</h2>
+                        <h2> 200</h2>
                         <span class="w3-opacity">per room</span>
                     </li>
                     <li class="w3-light-grey w3-padding-24">
@@ -405,152 +406,62 @@
         </div>
 
 
-
-
-        <div class="w3-panel w3-red w3-xlarge  w3-leftbar w3-padding-32" id="Guideline">
-            <h1><i class="fa fa-window-close w3-deep-orange w3-padding w3-margin-right"></i>Guideline</h1>
-
-            <ul class=" w3-large">
-                <p><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i>1. The guest House are
-                    primarily
-                    meant for official guests of the BU. participant of Seminars, Workshop, Conferences, training
-                    programs
-                    organized by the University.
-
-                    Booking Procedure & All Bookings are made through the Registrar, guest house office, Website and
-                    app.
-                    Teachers from other Universities, State University officers who come to bhopal for official work
-                    and
-                    are
-                    sponsored by their respective institutions may also be accommodated provided they white for
-                    reservation
-                    of rooms. such provisional Bookings are liable to concelled without assigning any reason in case
-                    the
-                    University needs to the rooms for its own use.
-
-                    2. A Priocity list has been approved for allotment of rooms in the University Quest poust which
-                    is
-                    as
-                    follows
-                </p>
+        
+        <button class=" accordion w3-xxlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom" id="tc"><i
+            class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i>Terms and Condition<i
+            class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i></button>
 
 
 
-                <p>1. The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or
-                    coming
-                    late should inform the Guest-House-Keeper/Security Guard in advance to avoid any inconvenience.
+    <div class="panel">
+        
 
-                    1. The University authorities are not responsible for valuable items kept in the rooms.
+        <ol class=" w3-large w3-text-white">
 
-
-                </p>
-
-                <p>2. Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa. i.
-                    Alcoholic
-                    drinks in the Guest House are strictly prohibited.
-
-                    >. Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the
-                    Requisitioner.
-
-                    *. The tariff is subject to change at any time without notice. 1. Visitor for guests residing in
-                    Guest House
-                    is allowed from 10.00 a.m. to 10.00 p.m. only.
-
-                </p>
-
-                <p>3.Pets are not allowed
-
-                    1. Damaging of property or defacing any notice/poster/walls
-
-                    etc. of the Guest Houses is illegal. . We do not accept credit/debit cards. Payment is accepted only
-                    in cash.
-                </p>
-
-                <p>4.All visitors coming to see a guest staying in the guest house shall have to make entries in the
-                    register
-                    available with the security guard.</p>
-
-                <p>Cooking/Washing is not allowed in the rooms. 1. Food/meals, except tea/coffee/cold drinks, are served
-
-                    only in the dinning hall.
-                </p>
-
-                <p>5.The guests are requested to switch off the lights and fans, close windows and lock their rooms when
-                    they go
-                    out.</p>
+            <p>
+                <h1>TERMS AND CONDITIONS</h1>
+                • Persons staying in the guest house are not entitled to bring in unauthorized guest(s) to stay with
+                them in the Guest House<br>
+                • The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or
+                coming late should inform the Guest-House-Keeper/Security Guard in advance to avoid any
+                inconvenience. <br>
+                • The University authorities are not responsible for valuable items kept in the rooms<br>
+                • Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa.<br>
+                • Alcoholic drinks in the Guest House are strictly prohibited. <br>
+                • Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the
+                Requisitioner. <br>
+                • The tariff is subject to change at any time without notice.<br>
+                • Visitor for guests residing in Guest House is allowed from 10.00 a.m. to 10.00 p.m. only.<br>
+                • Pets are not allowed.
+                • Damaging of property or defacing any notice/poster/walls etc. of the Guest Houses is illegal.<br>
+                • We do not accept credit/debit cards. Payment is accepted only in cash.<br>
+                • All visitors coming to see a guest staying in the guest house shall have to make entries in the
+                register available with the security guard.<br>
+                • Cooking/Washing is not allowed in the rooms.
+                • Food/meals, except tea/coffee/cold drinks, are served only in the dinning hall.
+                • The guests are requested to switch off the lights and fans, close windows and lock their rooms
+                when they go out.<br>
+                • Please do not pay tips to the staff. <br>
+                • The Guest House is meant for you. Please help us keep clean
+                • There is always room for improvement suggestions/complaints. If any, kindly put in the suggestion
+                box outside the office.<br>
 
 
-                <p>Please do not pay tips to the staff.
-
-                    '. The Guest House is meant for you. Please help us keep clean
-                </p>
-
-            </ul>
-
-            <!-- Contact -->
-            <div class="w3-container" id="contact" style="margin-top:75px">
-                <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
-                <hr style="width:50px;border:5px solid red" class="w3-round">
-
-
-            </div>
-
-            <!-- End page content -->
-        </div>
-
-
-
-        <div class="w3-panel w3-xlarge w3-green w3-hover-blue w3-leftbar w3-padding-32" id="tc">
-            <h1><i class="fa fa-window-close w3-deep-green w3-padding w3-margin-right"></i>TERMS AND CONDITIONS</h1>
-
-            <ol class=" w3-large">
-                <p>
-                    • Persons staying in the guest house are not entitled to bring in unauthorized guest(s) to stay with
-                    them in the Guest House<br>
-                    • The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or
-                    coming late should inform the Guest-House-Keeper/Security Guard in advance to avoid any
-                    inconvenience. <br>
-                    • The University authorities are not responsible for valuable items kept in the rooms<br>
-                    • Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa.<br>
-                    • Alcoholic drinks in the Guest House are strictly prohibited. <br>
-                    • Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the
-                    Requisitioner. <br>
-                    • The tariff is subject to change at any time without notice.<br>
-                    • Visitor for guests residing in Guest House is allowed from 10.00 a.m. to 10.00 p.m. only.<br>
-                    • Pets are not allowed.
-                    • Damaging of property or defacing any notice/poster/walls etc. of the Guest Houses is illegal.<br>
-                    • We do not accept credit/debit cards. Payment is accepted only in cash.<br>
-                    • All visitors coming to see a guest staying in the guest house shall have to make entries in the
-                    register available with the security guard.<br>
-                    • Cooking/Washing is not allowed in the rooms.
-                    • Food/meals, except tea/coffee/cold drinks, are served only in the dinning hall.
-                    • The guests are requested to switch off the lights and fans, close windows and lock their rooms
-                    when they go out.<br>
-                    • Please do not pay tips to the staff. <br>
-                    • The Guest House is meant for you. Please help us keep clean
-                    • There is always room for improvement suggestions/complaints. If any, kindly put in the suggestion
-                    box outside the office.<br>
-
-
-                </p>
-            </ol>
+            </p>
+        </ol>
+    </div>
 
 
 
 
+      
 
 
 
-
-            <!-- Contact -->
-
-
-            <!-- End page content -->
-        </div>
-
+        
 
         <h1 id="staff">our staff to help you</h1>
-        <div class="staff" style="box-sizing: border-box;">
+        <div class="staff" id="Contact" style="box-sizing: border-box;">
             <!-- The Team -->
 
             
@@ -558,7 +469,7 @@
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <h3>•	DR.Puneet Shukla </h3>
+                        <h3>DR. Puneet Shukla </h3>
                         <p>(officer-incharge)</p>
                         <p>7649884660</p>
                     </div>
@@ -566,7 +477,7 @@
 
                 <div class="column">
                     <div class="card">
-                        <h3>•	Mr.Raghvendra Sharma</h3>
+                        <h3>Mr.Raghvendra Sharma</h3>
                         <p> (Care Taker)</p>
                         <p>9425358405</p>
                     </div>
@@ -611,6 +522,18 @@
                     <input type="text" name="Name" class="form-control" placeholder="Your Name *" value=""
                         required="" />
                 </div>
+
+
+                <div class="form-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Designation *" value=""
+                        required="" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Purpose*" value=""
+                        required="" />
+                </div>
+
                 <div class="form-group">
                     <input type="email" name="Email" class="form-control" placeholder="Your Email *" value=""
                         required="" />
@@ -620,13 +543,20 @@
                         required="" />
                 </div>
 
-                <div class="form-group">
-                    <input type="datetime" name="Phone" class="form-control" placeholder="checkin date *" value=""
-                        required="" />
-                </div>
+                
 
                 <div class="form-group">
-                    <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
+                    <label class="control-label">check-In Date and Time</label>
+                    <div class='input-group date' id='datetimepicker1'>
+                       <input type='text' class="form-control" />
+                       <span class="input-group-addon">
+                       <span class="glyphicon glyphicon-calendar"></span>
+                       </span>
+                    </div>
+                 </div>
+
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btnSubmit btn-block" value="check-In" />
                 </div>
             </form>
         </div>
@@ -634,7 +564,7 @@
 
 
         <!-- Footer -->
-        <footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+        <footer class="w3-padding-32 w3-black w3-center w3-margin-top" id="contact">
            <h4>Phone Number:0755 2517210</h4>
            <email>Email I’d-Guesthousebu@gmail.com</email><br>
            <a href="www.bubhopal.ac.in">Website-www.bubhopal.ac.in</a>
@@ -719,6 +649,15 @@
                     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
                     .catch(error => console.error('Error!', error.message))
             })
+
+
+
+
+            $(function () {
+    $('#datetimepicker1').datetimepicker();
+ });
+
+
 
 
 
