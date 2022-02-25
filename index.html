@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+
 
 
 
@@ -113,20 +116,36 @@
                         <input type="email" name="Email" class="form-control" placeholder="Your Email *" value=""
                             required="" />
                     </div>
+
+                    
+
+                    <div class="form-group">
+                        <input type="text" name="Designation" class="form-control" placeholder="Designation/post/ *" value=""
+                            required="" />
+                    </div>
+
                     <div class="form-group">
                         <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *"
                             value="" required="" />
                     </div>
 
-                    <div class="form-group" id='datetimepicker1'>
-                        <input type="datetime-local" name="Phone" class="form-control" placeholder="checkin date *" value=""
+                    <div class="form-group" >
+                        <input type="datetime-local" name="Date" class="form-control" placeholder="checkin date *" value=""
                             required="" /> 
                             
                     </div>
 
-                    <div class="form-group">
-                        <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
+                    <i class="w3-margin-right w3-xlarge  w3-spin fa fa-refresh" ></i>
+
+                    <div class="form-group" >
+                        <input type="submit" onsubmit="ShowLoading()" name="submit" class="btnSubmit btn-block" value="Book Room" />
+                        
                     </div>
+
+                    
+
+
+                    
                 </form>
 
             </div>
@@ -625,6 +644,41 @@
                 var captionText = document.getElementById("caption");
                 captionText.innerHTML = element.alt;
             }
+
+
+
+            //loader//
+            
+            function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'loading_bar.GIF';
+        div.innerHTML = "Loading...<br />";
+        div.style.cssText = 'position: fixed; top: 5%; left: 40%; z-index: 5000; width: 422px; text-align: center; background: #EDDBB0; border: 1px solid #000';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+        // These 2 lines cancel form submission, so only use if needed.
+        //window.event.cancelBubble = true;
+        //e.stopPropagation();
+    }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             window.onscroll = function () { myFunction() };
