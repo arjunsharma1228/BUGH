@@ -35,26 +35,46 @@
 
 
 
+    /*loader*/
 
-
-
-
-
-
-
-    #loader {
+    .loader {
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.75) url(images/loading2.gif) no-repeat center center;
-        z-index: 10000;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        
+      }
+      
+      .loading {
+        border: 10px solid #ccc;
+        width: 60px;
+        height: 60px;
+        border-radius: 90%;
+        border-top-color: #121615;
+        border-left-color: #1ecd97;
+        border-right-color: #cd2a1e;
+        animation: spin 1s infinite ease-in;
+        
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+      
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
 
+
+
+
+
+
+    
 
     .w3-half img:hover {
 

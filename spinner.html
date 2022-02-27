@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Create a "Please Wait, Loading..." Animation</title>
+<style>
+/* This is the submit button styles */
+button {
+  display: block;
+  margin: 0 auto;
+  padding: .6em .8em;
+  /* Font-size is the root value that determines size of spinner parts. 
+Change this to whatever you want and spinner elements will size to match. */
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: .4em;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 1s;
+}
+
+/* focus/disabled styles, you can change this for accessibility */
+button:focus, button:disabled {
+  outline: none;
+  background: #aaa;
+}
+
+/* This is the space for the spinner to appear, applied to the button */
+.spin {
+  padding-left: 2.5em;
+  display: block;
+}
+
+/* position of the spinner when it appears, you might have to change these values */
+.spin .spinner {
+  left: -.6em;
+  top: .4em;
+  width: 2.5em;
+  display: block;
+  position: absolute;
+}
+
+/* spinner animation */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* The actual spinner element is a pseudo-element */
+.spin .spinner::before {
+  content: "";
+  width: 1.5em; /* Size of the spinner */
+  height: 1.5em; /* Change as desired */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: solid .35em #999; /* Thickness/color of spinner track */
+  border-bottom-color: #555; /* Color of variant spinner piece */
+  animation: .8s linear infinite spinner; /* speed of spinner */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* optional, but it will affect the size if changed */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+Code language: CS
+
+
+</style>
+
+</head>
+<body>
+
+  <div class=" accordion w3-xxlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom" id="tc"><i
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i>Terms and Condition<i
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i></button>
+
+
+
+        <div class="panel">
+
+
+            <ol class=" w3-large w3-text-white">
+
+                <p>
+                <h1>TERMS AND CONDITIONS</h1>
+                • Persons staying in the guest house are not entitled to bring in unauthorized guest(s) to stay with
+                them in the Guest House<br>
+                • The Guest House closes at 10 PM in winter and 11 PM in summer. Those staying out for the night or
+                coming late should inform the Guest-House-Keeper/Security Guard in advance to avoid any
+                inconvenience. <br>
+                • The University authorities are not responsible for valuable items kept in the rooms<br>
+                • Male visitors/guests are not allowed in the rooms occupied by female guests and vice-versa.<br>
+                • Alcoholic drinks in the Guest House are strictly prohibited. <br>
+                • Any damage or loss to the Guest Houses will be subject to a fine which would be paid by the
+                Requisitioner. <br>
+                • The tariff is subject to change at any time without notice.<br>
+                • Visitor for guests residing in Guest House is allowed from 10.00 a.m. to 10.00 p.m. only.<br>
+                • Pets are not allowed.<br>
+                • Damaging of property or defacing any notice/poster/walls etc. of the Guest Houses is illegal.<br>
+                • We do not accept credit/debit cards. Payment is accepted only in cash.<br>
+                • All visitors coming to see a guest staying in the guest house shall have to make entries in the
+                register available with the security guard.<br>
+                • Cooking/Washing is not allowed in the rooms.<br>
+                • Food/meals, except tea/coffee/cold drinks, are served only in the dinning hall.<br>
+                • The guests are requested to switch off the lights and fans, close windows and lock their rooms
+                when they go out.<br>
+                • Please do not pay tips to the staff. <br>
+                • The Guest House is meant for you. Please help us keep clean
+                • There is always room for improvement suggestions/complaints. If any, kindly put in the suggestion
+                box outside the office.<br>
+
+
+                </p>
+            </ol>
+        </div>
+
+
+
+
+
+
+
+<script>
+    let btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  // form submission starts
+  // button is disabled
+  btn.classList.add('spin');
+  btn.disabled = true;
+  
+  // This disables the whole form via the fieldset
+  btn.form.firstElementChild.disabled = true;
+  
+  // this setTimeout call mimics some asyncronous action
+  // you would have something else here
+  window.setTimeout(function () {
+    // when asyncronous action is done, remove the spinner
+    // re-enable button/fieldset
+    btn.classList.remove('spin');
+    btn.disabled = false;
+    btn.form.firstElementChild.disabled = false;
+  }, 4000);
+}, false);
+
+</script>
+</body>
+</html>

@@ -24,8 +24,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="index.css">
 
@@ -44,16 +46,16 @@
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i
-                    class="glyphicon glyphicon-user"></i>  Home</a>
+                    class="glyphicon glyphicon-user"></i> Home</a>
             <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
             <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Photo Gallery</a>
 
             <a href="#Booking" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Booking Procedure</a>
-            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Terrif</a>
+            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tarrif</a>
             <a href="#priority" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Priority </a>
-            
+
             <a href="#staff" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Staff</a>
-           
+
             <a href="#tc" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Terms and Conditions</a>
 
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Book</a>
@@ -92,11 +94,14 @@
 
         </div>
 
-        
+
 
         <button id="myBtn" class="w3-xlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom"><i
-                class="material-icons">cloud</i>    BOOK YOUR
+                class="material-icons">cloud</i> BOOK YOUR
             ROOM</button>
+
+        <!--<script src="https://sheetdb.io/s/t/4usftgtjhmod2.js"></script>-->
+
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -106,6 +111,16 @@
                 <span class="close">&times;</span>
                 <p>please fill the form to book your room</p>
                 <form method="post" autocomplete="off" name="google-sheet">
+
+
+                    <div class="loader">
+                        <div class="loading">
+                        </div>
+                    </div>
+
+
+
+
                     <div class="form-group">
                         <input type="text" name="Name" class="form-control" placeholder="Your Name *" value=""
                             required="" />
@@ -115,11 +130,11 @@
                             required="" />
                     </div>
 
-                    
+
 
                     <div class="form-group">
-                        <input type="text" name="Designation" class="form-control" placeholder="Designation/post/ *" value=""
-                            required="" />
+                        <input type="text" name="Designation" class="form-control" placeholder="Designation/post/ *"
+                            value="" required="" />
                     </div>
 
                     <div class="form-group">
@@ -129,36 +144,64 @@
 
                     <div class="form-group">
 
-                      <select  name="purpose" class="form-control"  placeholder="purpose">
-                        <option value="Official Visit">Official Visit</option>
-                        <option value="Personal visit">Personal visit</option>
-                        <option value="Other">Other</option>
-                      </select>
+                        <select name="purpose" class="form-control" placeholder="purpose">
+                            <option value="Official Visit">Official Visit</option>
+                            <option value="Personal visit">Personal visit</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
 
+
+
+                    <div class="form-group">
+                        <input type="datetime-local" name="Date" class="form-control" placeholder="checkin date *"
+                            value="" required="" />
+
+                    </div>
+
+                    <i class="w3-margin-right w3-xlarge  w3-spin fa fa-refresh"></i>
                     
 
-                    <div class="form-group" >
-                        <input type="datetime-local" name="Date" class="form-control" placeholder="checkin date *" value=""
-                            required="" /> 
-                            
-                    </div>
 
-                    <i class="w3-margin-right w3-xlarge  w3-spin fa fa-refresh" ></i>
-
-                    <div class="form-group" >
-                        <input type="submit" onsubmit="ShowLoading()" name="submit" class="btnSubmit btn-block" value="Book Room" />
+                    <div onsubmit="return checkForm(this);">
+                        <p><input type="checkbox" required="" name="terms" > I accept the<a href="spinner.html"><u>Terms and Conditions</u></a> </p>
                         
                     </div>
 
-                    
 
 
+
+
+
                     
+                    <div class="form-group">
+                        <input type="submit" onclick="spinner()" name="submit" class="btnSubmit btn-block"
+                            value="Book Room" />
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
                 </form>
+
+
 
             </div>
         </div>
+
+
+
+
+
 
 
 
@@ -204,7 +247,9 @@
             <h1 class="w3-xxxlarge w3-text-red w3-animate-right"><b>About</b></h1>
             <hr style="width:50px;border:5px solid red w3-animate-zoom" class="w3-round">
             <p>
-                The university has a guest house located on Gate number-2 of our Campus. The accommodation is mainly meant for the guests of the University either invited or attending the programmes at the University campus. 
+                The university has a guest house located on Gate number-2 of our Campus. The accommodation is mainly
+                meant for the guests of the University either invited or attending the programmes at the University
+                campus.
             </p>
         </div>
 
@@ -255,14 +300,19 @@
             <hr style="width:50px;border:5px solid red" class="w3-round">
             <p>
 
-                All reservations are made through the registrar's office, the Guest House office, the website, and the app. 
-Teachers from other universities and state university officers who come to Bhopal on official business and are sponsored by their respective institutions may be accommodated if they write for room reservations.
-The maximum amount of time you can stay is three days. Before occupying the room, guests must make entries in the register with the guest housekeeper. 
+                All reservations are made through the registrar's office, the Guest House office, the website, and the
+                app.
+                Teachers from other universities and state university officers who come to Bhopal on official business
+                and are sponsored by their respective institutions may be accommodated if they write for room
+                reservations.
+                The maximum amount of time you can stay is three days. Before occupying the room, guests must make
+                entries in the register with the guest housekeeper.
 
 
 
             </p>
-            <p><b>** If the University requires the rooms for its own use, such provisional bookings may be cancelled without explanation.</b></p>
+            <p><b>** If the University requires the rooms for its own use, such provisional bookings may be cancelled
+                    without explanation.</b></p>
 
         </div>
 
@@ -274,13 +324,20 @@ The maximum amount of time you can stay is three days. Before occupying the room
             <p>
 
 
-                Check-in anytime and check-out <b>24 hours</b> from  the time of Arrival. However ,for the purpose of accounting a day means 24 house from the time of arrival. <b>Fraction of day will be count as  full day.</b><br>Ordinary person will be allowed to stay for maximum 5 days only .In exceptional cases the extension may be granted subject to the prior approval of the vice -chancellor depending upon the availability of rooms
+                Check-in anytime and check-out <b>24 hours</b> from the time of Arrival. However ,for the purpose of
+                accounting a day means 24 house from the time of arrival. <b>Fraction of day will be count as full
+                    day.</b><br>Ordinary person will be allowed to stay for maximum 5 days only .In exceptional cases
+                the extension may be granted subject to the prior approval of the vice -chancellor depending upon the
+                availability of rooms
 
 
 
             </p><br>
 
-            <p>In each room, there is an inventory of things for usage in the rooms provided by the guests. Guests are asked to check their belongings before entering the room. The guest is responsible for the proper use and repair of the supplies provided in both the rooms and the guest home. They will be held accountable for any losses or damages incurred during their stay.
+            <p>In each room, there is an inventory of things for usage in the rooms provided by the guests. Guests are
+                asked to check their belongings before entering the room. The guest is responsible for the proper use
+                and repair of the supplies provided in both the rooms and the guest home. They will be held accountable
+                for any losses or damages incurred during their stay.
 
             </p>
         </div>
@@ -291,42 +348,47 @@ The maximum amount of time you can stay is three days. Before occupying the room
             <h1 class="w3-xlarge w3-text-red w3-animate-zoom"><b>priority</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
             <p></p>
-            <p><b>     
-                *The following priority list for assignment of rooms in the University Guest House has been   approved:
-            
-            </b></p>
+            <p><b>
+                    *The following priority list for assignment of rooms in the University Guest House has been
+                    approved:
+
+                </b></p>
             </p>
 
             <div class="row">
                 <div class="column">
                     <div class="card">
                         <h3>First priority</h3>
-                        <p>Guest who are coming to attend Selection Committee/ EC/ Court/ AC/ FC/viva- voice/ Board of studies.</p>
-                        
+                        <p>Guest who are coming to attend Selection Committee/ EC/ Court/ AC/ FC/viva- voice/ Board of
+                            studies.</p>
+
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="card">
                         <h3>Second priority</h3>
-                        <p>Vice chancellor /Registrar Visitor’s and Visiting Team from UGC /Higher education Department .</p>
-                        
+                        <p>Vice chancellor /Registrar Visitor’s and Visiting Team from UGC /Higher education Department
+                            .</p>
+
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="card">
                         <h3>Third Priority</h3>
-                        <p>faculty member of different University Newly appointed faculty member / state university official guests.</p>
-                        
+                        <p>faculty member of different University Newly appointed faculty member / state university
+                            official guests.</p>
+
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="card">
                         <h3>Fourth Priority</h3>
-                        <p>Higher education Department officers, Personal Guest of Bu community Visiting faculty/ Visiting Scholars/ Students and seminar participants.</p>
-                        
+                        <p>Higher education Department officers, Personal Guest of Bu community Visiting faculty/
+                            Visiting Scholars/ Students and seminar participants.</p>
+
                     </div>
                 </div>
             </div>
@@ -350,7 +412,7 @@ The maximum amount of time you can stay is three days. Before occupying the room
 
         <!-- Packages / Pricing Tables -->
         <div class="w3-container" id="packages" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+            <h1 class="w3-xxxlarge w3-text-red"><b>Tarrif</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
 
             <h1>ROOM CHARGES </h1>
@@ -415,22 +477,26 @@ The maximum amount of time you can stay is three days. Before occupying the room
 
 
         
-       
 
 
 
 
-      
 
 
 
-        
+
+
+
+
+
+
+
 
         <h1 id="staff">our staff to help you</h1>
         <div class="staff" id="Contact" style="box-sizing: border-box;">
             <!-- The Team -->
 
-            
+
 
             <div class="row">
                 <div class="column">
@@ -460,12 +526,12 @@ The maximum amount of time you can stay is three days. Before occupying the room
                 <div class="column">
                     <div class="card" style="text-align: left; ">
                         <p>Mr.suresh(cook)
-                            
-                            </p>
-                        <p>	Mr.Shyam Sundar(Room Bearer)
-                            </p>
-                        <p>	Mr.Deendayal saket(Room Bearer)
-                            </p>
+
+                        </p>
+                        <p> Mr.Shyam Sundar(Room Bearer)
+                        </p>
+                        <p> Mr.Deendayal saket(Room Bearer)
+                        </p>
                         <p>Mr.Gulab Lahat(Room Bearer)</p>
                     </div>
                 </div>
@@ -476,17 +542,17 @@ The maximum amount of time you can stay is three days. Before occupying the room
         </div>
 
         <button class=" accordion w3-xxlarge w3-button w3-block w3-black w3-hover-red w3-margin-bottom" id="tc"><i
-            class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i>Terms and Condition<i
-            class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i></button>
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i>Terms and Condition<i
+                class="w3-margin-left w3-xlarge w3-spin fa fa-refresh"></i></button>
 
 
 
-    <div class="panel">
-        
+        <div class="panel">
 
-        <ol class=" w3-large w3-text-white">
 
-            <p>
+            <ol class=" w3-large w3-text-white">
+
+                <p>
                 <h1>TERMS AND CONDITIONS</h1>
                 • Persons staying in the guest house are not entitled to bring in unauthorized guest(s) to stay with
                 them in the Guest House<br>
@@ -515,21 +581,21 @@ The maximum amount of time you can stay is three days. Before occupying the room
                 box outside the office.<br>
 
 
-            </p>
-        </ol>
-    </div>
+                </p>
+            </ol>
+        </div>
 
 
 
 
-        
+
 
         <!-- Footer -->
         <footer class="w3-padding-32 w3-black w3-center w3-margin-top" id="contact">
-           <h4>Phone Number:0755 2517210</h4>
-           <email>Email I’d-Guesthousebu@gmail.com</email><br>
-           <a href="www.bubhopal.ac.in">Website-www.bubhopal.ac.in</a>
-           
+            <h4>Phone Number:0755 2517210</h4>
+            <email>Email I’d-Guesthousebu@gmail.com</email><br>
+            <a href="www.bubhopal.ac.in">Website-www.bubhopal.ac.in</a>
+
             <h5>Find Us On</h5>
             <div class="w3-xlarge w3-padding-16">
                 <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -590,23 +656,31 @@ The maximum amount of time you can stay is three days. Before occupying the room
 
 
             //loader//
-            
-            function ShowLoading(e) {
-        var div = document.createElement('div');
-        var img = document.createElement('img');
-        img.src = 'loading_bar.GIF';
-        div.innerHTML = "Loading...<br />";
-        div.style.cssText = 'position: fixed; top: 5%; left: 40%; z-index: 5000; width: 422px; text-align: center; background: #EDDBB0; border: 1px solid #000';
-        div.appendChild(img);
-        document.body.appendChild(div);
-        return true;
-        // These 2 lines cancel form submission, so only use if needed.
-        //window.event.cancelBubble = true;
-        //e.stopPropagation();
-    }
 
 
-    
+
+            function spinner() {
+                document.getElementsByClassName("loader")[0].style.display = "block";
+            }
+
+
+            //terms and con//
+
+            function checkForm(form) {
+                if (!form.terms.checked) {
+                    alert("Please indicate that you accept the Terms and Conditions");
+                    form.terms.focus();
+                    return false;
+                }
+                return true;
+            }
+
+
+
+
+
+
+
 
 
 
@@ -643,6 +717,7 @@ The maximum amount of time you can stay is three days. Before occupying the room
                 e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                    .then(onClick => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
                     .catch(error => console.error('Error!', error.message))
             })
 
@@ -650,8 +725,8 @@ The maximum amount of time you can stay is three days. Before occupying the room
 
 
             $(function () {
-    $('#datetimepicker1').datetimepicker();
- });
+                $('#datetimepicker1').datetimepicker();
+            });
 
 
 
